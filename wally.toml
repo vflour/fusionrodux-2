@@ -1,0 +1,9 @@
+[package]
+name = "vflour/fusion-rodux-2"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+Fusion = "elttob/fusion@0.2.0"
+Rodux = "roblox/rodux@3.0.0"
