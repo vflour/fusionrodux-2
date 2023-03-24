@@ -1,2 +1,2 @@
-# fusion-redux-2
-Implementation of a redux wrapper for fusion 0.2
+# fusion-rodux-2
+Implementation of a rodux wrapper for fusion 0.2
