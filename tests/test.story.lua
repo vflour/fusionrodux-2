@@ -1,7 +1,7 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Fusion = require(ReplicatedStorage.Packages.Fusion)
 local StoreHandler = require(ReplicatedStorage.Packages.FusionRodux)
-local createStore = require(script.Parent.createStore)
+local data = require(script.Parent.data)
 
 local New = Fusion.New
 local Children = Fusion.Children
@@ -10,20 +10,8 @@ local Computed = Fusion.Computed
 local OnEvent = Fusion.OnEvent
 local doNothing = Fusion.doNothing
 
-local actions = {
-    setBreed = function(breed)
-        return {
-            type = "setBreed",
-            breed = breed
-        }
-    end,
-    setName = function(name)
-        return {
-            type = "setName",
-            name = name
-        }
-    end
-}
+local createStore = data.createStore
+local actions = data.actions
 
 ---Fusion test component that updates 
 ---@param props any

@@ -20,6 +20,26 @@ local catReducer = Rodux.combineReducers({
     breed = breedReducer
 })
 
-return function(): Rodux.Store
+local function createStore(): Rodux.Store
     return Rodux.Store.new(catReducer)
 end
+
+local actions = {
+    setBreed = function(breed)
+        return {
+            type = "setBreed",
+            breed = breed
+        }
+    end,
+    setName = function(name)
+        return {
+            type = "setName",
+            name = name
+        }
+    end
+}
+
+return {
+    createStore = createStore,
+    actions = actions
+}
