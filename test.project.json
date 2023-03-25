@@ -6,9 +6,12 @@
     "ReplicatedStorage": {
         "Packages": {
           "$path": "Packages",
-          "FusionRedux": {
+          "FusionRodux": {
             "$path": "src"
           }
+        },
+        "Test": {
+            "$path": "tests"
         }
     },
 
