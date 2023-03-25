@@ -25,12 +25,16 @@ local actions = {
     end
 }
 
+---Fusion test component that updates 
+---@param props any
+---@return any
 local function Test(props)
     local store = props.Store
 
     local value, disconnect = StoreHandler(store, function(newState)
         return newState
     end)
+
     return New "Frame" {
         Size = UDim2.fromOffset(200, 200),
         [Cleanup] = function()
@@ -38,8 +42,15 @@ local function Test(props)
             disconnect()
         end,
         [Children] = {
-            New "TextButton" {
+            New "TextLabel" {
                 Size = UDim2.fromOffset(200, 100),
+                Text = "This is my cat.\n They don't seem to have a name or a breed, so feel free to press one of the below buttons to give them one!",
+                TextWrapped = true,
+            },
+            New "TextButton" {
+                Size = UDim2.fromOffset(200, 50),
+                Position = UDim2.fromOffset(0, 100),
+                AutoButtonColor = true,
                 Text = Computed(function()
                     return value:get().name
                 end, doNothing),
@@ -48,8 +59,9 @@ local function Test(props)
                 end
             },
             New "TextButton" {
-                Size = UDim2.fromOffset(200, 100),
-                Position = UDim2.fromOffset(0, 100),
+                Size = UDim2.fromOffset(200, 50),
+                Position = UDim2.fromOffset(0, 150),
+                AutoButtonColor = true,
                 Text = Computed(function()
                     return value:get().breed
                 end, doNothing),

@@ -1,5 +1,6 @@
 [package]
 name = "vflour/fusion-rodux-2"
+description = "A rodux binding that's compatible with Fusion 0.2.0"
 version = "0.1.0"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
