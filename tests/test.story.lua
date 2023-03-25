@@ -1,7 +1,7 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Fusion = require(ReplicatedStorage.Packages.Fusion)
-local Rodux: Rodux = require(ReplicatedStorage.Packages.Rodux)
 local StoreHandler = require(ReplicatedStorage.Packages.FusionRodux)
+local createStore = require(script.Parent.createStore)
 
 local New = Fusion.New
 local Children = Fusion.Children
@@ -9,25 +9,6 @@ local Cleanup = Fusion.Cleanup
 local Computed = Fusion.Computed
 local OnEvent = Fusion.OnEvent
 local doNothing = Fusion.doNothing
-
-local nameReducer = Rodux.createReducer("No Name", {
-    setName = function(_state, action)
-        print("Dispatched setName")
-        return action.name
-    end
-})
-
-local breedReducer = Rodux.createReducer("Unknown", {
-    setBreed = function(_state, action)
-        print("Dispatched setBreed")
-        return action.breed
-    end
-})
-
-local catReducer = Rodux.combineReducers({
-    name = nameReducer,
-    breed = breedReducer
-})
 
 local actions = {
     setBreed = function(breed)
@@ -81,13 +62,14 @@ local function Test(props)
 end
 
 return function(screen)
-    local store = Rodux.Store.new(catReducer)
+    local store = createStore()
     local test = Test {
         Store = store
     }
     test.Parent = screen
 
     return function()
+        store:destruct()
         test:Destroy()
     end
 end
