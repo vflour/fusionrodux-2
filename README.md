@@ -4,14 +4,17 @@ Implementation of a rodux binding for Fusion 0.2.x
 ## Installation
 | Method           | Source             |
 |------------------| -------------      |
-| Wally            | ``FusionRodux = "vflour/fusionrodux-2~0.1.0"``  |
-| Binary `(.rbxm)` | [Latest release]() |
+| Wally            | ``FusionRodux = "vflour/fusionrodux-2@0.1.0"``  |
+| Binary `(.rbxm)` | [Latest release](https://github.com/vflour/fusion-rodux-2/releases/tag/0.1.0) |
 
+## Contributing
+Contributions are welcome! Feel free to open and issue and/or submit a pull request :-)
 
 ## Usage
+This package is intended to be used with Wally and Rojo! Make sure to run ``wally install`` before serving or building with Rojo.
 
 ### Requiring
-First (and most importantly), you need to actually require it! Make sure it's parented to a folder where Fusion and Rodux sits (this is mainly because this package is intended to be paired with wally). 
+First (and most importantly), you need to actually require it! Make sure it's parented to a folder where Fusion and Rodux sits (this is mainly because this package is intended to be paired with Wally). 
 
 ```
 local Packages = game.ReplicatedStorage.Packages
