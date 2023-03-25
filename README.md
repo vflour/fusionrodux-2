@@ -1,4 +1,4 @@
-# fusion-rodux-2
+# fusionrodux-2
 Implementation of a rodux binding for Fusion 0.2.x
 
 ## Installation
