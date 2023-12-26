@@ -33,8 +33,8 @@ local function FusionRedux<T>(store: Rodux.Store, processor: (state, state) -> T
         end,
     }
     local meta = setmetatable({
-        type = "FusionRedux",
-		kind = "Value",
+        type = "State",
+		kind = "FusionRedux",
     }, valueMetatable)
     
     return meta, disconnect
